@@ -1,0 +1,107 @@
+
+headerHeight = 20px
+titleHeight = 42px
+editorPadding = 8px
+bodyMargin = 20px
+fullHeight = headerHeight + titleHeight + editorPadding + 2 * bodyMargin
+mainHeight = "calc(100vh - %s)" % fullHeight
+
+:root
+	--background-body: rgb(36, 36, 46);
+
+html
+	overflow visible
+
+body
+	width 94vw
+	height 100vh
+	max-width 1280px
+	flex 1
+	display flex
+	flex-direction column
+	justify-content center
+	margin 0 auto
+
+
+	> header 
+		height auto
+
+	> main 
+		display flex
+		flex 1
+		flex-direction column
+
+		> * 
+			flex-shrink 0
+			overflow auto
+
+
+#editor, #result 
+	white-space pre
+	border 1px solid #555
+	height mainHeight
+	overflow auto
+	padding editorPadding
+	border-radius 1px
+	border 2px solid #7d7d9d
+
+#editor
+	flex 1
+
+#result, #error
+	height 30% 
+	border 2px solid #9ac181
+	margin 12px 0
+
+#error
+	border 2px solid #642222
+	background #862929
+	padding 6px 9px;	height 64px
+	color white
+	border-radius 6px
+
+
+/**
+* Dumper style
+*/
+.cute-dump-property 
+	color #ff79c6
+	font-weight bold
+
+ 
+.cute-dump-number 
+	font-weight bold
+	color #bd93f9
+
+ 
+.cute-dump-keyword 
+	font-weight bold
+	font-style italic
+	color #8be9fd
+
+ 
+.cute-dump-string 
+	font-weight bold
+	color #f1fa8c
+
+
+
+@media screen and (max-width 800px), (max-height 600px)
+	body > header
+		display none
+		
+	#editor, #dumper
+		height "calc(100vh - %s)" % (titleHeight + editorPadding + 2 * bodyMargin)
+
+@media screen and (max-width 700px)
+	body > .titles
+		display none
+	
+	body > main
+		display block
+		height 100vh
+		// margin auto
+
+	#editor, #dumper
+		height 41vh
+		margin-top 3vh

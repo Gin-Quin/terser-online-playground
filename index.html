@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Terser online playground</title>
+		<link rel="icon shortcut" type="image/png" href="favicon.png?">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="water/water.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<!-- <script src="esprima/esprima.js"></script> -->
+		<!-- <script src="cute-dump/cute-dump.js"></script> -->
+		<script src="terser/dist/bundle.min.js"></script>
+		
+		<!-- Ace [code editor] -->
+		<script src="ace/ace.js"></script>
+	</head>
+
+
+	<body>
+		<header>
+			<p>Online tool to vizualize live Terser's minifier.</p>
+		</header>
+
+		<main>
+			<div id="editor">const world = "world"
+const my_important_message = "Hello " + world
+if (world != 'world') {
+	console.log("This cannot happen")
+}
+console.log(my_important_message)
+</div>
+			<div id="result"></div>
+			<div id="error"></div>
+		</main>
+
+	</body>
+
+	<script src="index.js"></script>
+</html>
